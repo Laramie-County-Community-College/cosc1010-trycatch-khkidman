@@ -1,4 +1,6 @@
 '''
+Kayla Kidman
+11/04/25
 A pedometer treats walking 2,000 steps as walking 1 mile. 
 
 Write a steps_to_miles() function that takes the number of steps as a parameter and returns the miles walked. 
@@ -24,7 +26,19 @@ the output of the program is:
 Exception: Negative step count entered.
 '''
 
-# Define your method here
+def steps_to_miles(steps):
+    if steps < 0:
+        raise ValueError("Exception: Negative step count entered")
+    miles = steps / 2000
+    return miles
+
+def main():
+    try:
+        steps = int(input())
+        miles = steps_to_miles(steps)
+        print(f"{miles:.2f}")
+    except ValueError as e:
+        print(e)  
 
 if __name__ == '__main__':
-    # Type your code here.
+    main()
